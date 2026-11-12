@@ -1,0 +1,52 @@
+<title>2027 외식 트렌드 30초</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* 레이아웃: 어두운 무대 위 16:9 플레이어 한 장, 아래에 트렌드 4개 요약 */
+  :root{
+    --bg:#0e1230; --panel:#161a3d; --fg:#f6efe0; --muted:#a9acc8;
+    --mustard:#f4c542; --coral:#e76f51; --teal:#2a9d8f; color-scheme:dark;
+    --font:'Pretendard','Noto Sans KR','Malgun Gothic',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--fg);font-family:var(--font);margin:0;
+    padding-block:32px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  main{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+  h1{font-size:clamp(24px,4vw,36px);margin:0;line-height:1.2;text-wrap:balance}
+  .sub{margin:6px 0 0;color:var(--muted);font-size:15px}
+  .stage{position:relative;aspect-ratio:16/9;max-width:100%;background:#000;border-radius:6px;overflow:hidden;box-shadow:8px 10px 0 var(--coral)}
+  video{width:100%;height:100%;display:block;background:#000}
+  .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border:0;cursor:pointer;
+    background:linear-gradient(rgba(14,18,48,.35),rgba(14,18,48,.55));color:var(--fg);font:inherit}
+  .play span{display:flex;align-items:center;gap:12px;background:var(--mustard);color:#1c1e34;font-weight:700;font-size:18px;
+    padding:14px 26px;border-radius:999px;box-shadow:4px 6px 0 var(--coral)}
+  .play:focus-visible{outline:3px solid var(--mustard);outline-offset:-6px}
+  .play[hidden]{display:none}
+  ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  li{background:var(--panel);border-radius:6px;padding:14px 16px;min-width:0}
+  li b{display:block;margin-bottom:4px;color:var(--mustard);font-size:16px}
+  li span{color:var(--muted);font-size:14px;line-height:1.5}
+  .note{color:var(--muted);font-size:13px;line-height:1.6;margin:0}
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+<main>
+  <header>
+    <h1>2027 외식 트렌드 30초</h1>
+    <p class="sub">파티클과 페이퍼 컷아웃으로 정리한 내년 외식업 키워드. 소리를 켜고 재생하세요.</p>
+  </header>
+  <div class="stage">
+    <video id="v" controls playsinline preload="auto" src="data:video/mp4;base64,%%VIDEO%%"></video>
+    <button class="play" id="p" aria-label="영상 재생"><span>&#9654; 재생</span></button>
+  </div>
+  <ul>
+    <li><b>가치소비</b><span>납득되는 가격이 선택받습니다.</span></li>
+    <li><b>AI 운영</b><span>비용은 줄고 효율은 오릅니다.</span></li>
+    <li><b>경험 소비</b><span>기억에 남는 한 끼가 이깁니다.</span></li>
+    <li><b>건강한 한 끼</b><span>맛과 건강, 둘 다 잡아야 합니다.</span></li>
+  </ul>
+  <p class="note">가치소비와 AI는 농식품부 '2027 식품외식산업전망' 보도자료의 방향성이고, 경험·건강은 일반적인 전망입니다. 세부 키워드는 11월 18일 공개되는 강연 자료로 교차 확인이 필요합니다.</p>
+</main>
+<script>
+  var v=document.getElementById('v'),p=document.getElementById('p');
+  p.addEventListener('click',function(){p.hidden=true;v.currentTime=0;v.play().catch(function(){p.hidden=false;});});
+  v.addEventListener('ended',function(){p.hidden=false;});
+</script>
