@@ -1,0 +1,7 @@
+﻿work/voice/
+work/chunk*.mp4
+work/*.wav
+work/*.npy
+work/still_*.png
+work/list.txt
+work/__pycache__/
